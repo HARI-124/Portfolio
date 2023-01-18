@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import useMediaQuery from '../hooks/useMediaQuery'
 import {HiMenu} from "react-icons/hi";
 import {RiCloseLine} from "react-icons/ri";
+import Landing from './Landing';
 
 const Link = ({page,selectedPage,setSelectedPage}) => {
     const lowerCasePage = page.toLowerCase();
@@ -27,8 +28,8 @@ const Link = ({page,selectedPage,setSelectedPage}) => {
 const Navbar = ({isTopPage, selectedPage,setSelectedPage}) => {
     const [ismenuToggled,setIsMenuToggled] = useState("false");
     const isAboveSmallScreens = useMediaQuery("(min-width:760px)");
-    const links = ["Home","skills","Projects","Testimonials","Contact"]
-    const navbarBackground = isTopPage? "":"bg-red";
+    const links = ["Home","Skills","Projects","Testimonials","Contact"]
+    const navbarBackground = isTopPage? "bg-red":"bg-red";
     return (
     <nav className= {`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
         <div className='flex items-center justify-between mx-auto w-5/6'>
@@ -79,7 +80,9 @@ const Navbar = ({isTopPage, selectedPage,setSelectedPage}) => {
                             setSelectedPage = {setSelectedPage}
                         />
                         )}
-
+                        <Landing
+                            setSelectedPage = {setSelectedPage}
+                        ></Landing>
                     </div>
 
                 </div>
