@@ -18,13 +18,13 @@ function App() {
   useEffect(()=>{
     
     const handleScroll=()=>{
-      if(window.scrollY === 0) setIsTopPage(true);
-      if(window.screenY !== 0) setIsTopPage(false);
+      if(window.pageYOffset === 0) setIsTopPage(true);
+      if(window.pageYOffset !== 0) setIsTopPage(false);
     }
     window.addEventListener("scroll",handleScroll);
       return () => window.removeEventListener("scroll",handleScroll);
   },[]);
-  
+  console.log(isTopPage);
   return (
    
     

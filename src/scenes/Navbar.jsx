@@ -29,7 +29,8 @@ const Navbar = ({isTopPage, selectedPage,setSelectedPage}) => {
     const [ismenuToggled,setIsMenuToggled] = useState("false");
     const isAboveSmallScreens = useMediaQuery("(min-width:760px)");
     const links = ["Home","Skills","Projects","Testimonials","Contact"]
-    const navbarBackground = isTopPage? "bg-red":"bg-red";
+    const navbarBackground = isTopPage ? "":"bg-red";
+    
     return (
     <nav className= {`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
         <div className='flex items-center justify-between mx-auto w-5/6'>
